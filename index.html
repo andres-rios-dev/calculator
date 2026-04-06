@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <!-- Link CSS Styles -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <main class="calculator">
+
+      <div class="screen-container">
+        <div class="screen-top-row"></div>
+        <div class="screen-bottom-row"></div>
+      </div>
+
+      <div class="button-container">
+
+        <button class="button" data-type="command" data-action="clear" type="button">AC</button>
+        <button class="button" data-type="command" data-action="negate" type="button">+/-</button>
+        <button class="button" data-type="command" data-action="backspace" type="button">
+          <svg class="backspace-icon" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
+            width="30px" fill="#1e293b">
+            <path
+              d="M470.67-329.33 561-419l90.33 89.67 61-61L622-480l89-89.67-61-61.66L561-541l-90.33-90.33L409-569.67 500-480l-91 89.67 61.67 61ZM363.33-132q-25.78 0-48.02-11.24-22.25-11.25-36.64-31.09L52-480l226-305.67q14.39-20.15 36.64-31.57 22.25-11.43 48.03-11.43H804q44.48 0 74.9 30.43 30.43 30.43 30.43 74.91v486.66q0 44.2-30.43 74.44Q848.48-132 804-132H363.33ZM182-480l180 244.33h443v-488.66H362L182-480Zm402 0Z" />
+          </svg>
+        </button>
+        <button class="button" data-type="operator" data-action="divide" type="button">&divide;</button>
+
+        <button class="button" data-type="digit" data-value="7" type="button">7</button>
+        <button class="button" data-type="digit" data-value="8" type="button">8</button>
+        <button class="button" data-type="digit" data-value="9" type="button">9</button>
+        <button class="button" data-type="operator" data-action="multiply" type="button">&times;</button>
+
+        <button class="button" data-type="digit" data-value="4" type="button">4</button>
+        <button class="button" data-type="digit" data-value="5" type="button">5</button>
+        <button class="button" data-type="digit" data-value="6" type="button">6</button>
+        <button class="button" data-type="operator" data-action="subtract" type="button">&minus;</button>
+
+        <button class="button" data-type="digit" data-value="1" type="button">1</button>
+        <button class="button" data-type="digit" data-value="2" type="button">2</button>
+        <button class="button" data-type="digit" data-value="3" type="button">3</button>
+        <button class="button" data-type="operator" data-action="add" type="button">&plus;</button>
+
+        <button class="button span-two" data-type="digit" data-value="0" type="button">0</button>
+        <button class="button" data-type="digit" data-value="point" type="button">.</button>
+        <button class="button" data-type="command" data-action="equals" type="button">=</button>
+
+      </div>
+
+    </main>
+
+    <footer class="credits">
+      <p>andres-rios-dev</p>
+      <a href="" target="_blank" rel="noopener noreferrer">
+        <img class="github-logo" src="./github-logo.svg" alt="GitHub Logo" />
+      </a>
+    </footer>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

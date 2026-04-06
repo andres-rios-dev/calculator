@@ -1,0 +1,191 @@
+:root {
+  /* Subtle technical gray background */
+  --bg-color: #f1f5f9;
+  /* Pure white body */
+  --calc-color: #ffffff;
+  /* Screen with a cool touch */
+  --screen-color: #f8fafc;
+  /* Professional Slate text */
+  --text-color: #1e293b;
+  /* Fine and elegant borders */
+  --border-color: #cbd5e1;
+  /* Button colors */
+  --digit-button-color: #ffffff;
+  --operator-button-color: #f1f5f9;
+  /* 'Inter' blue for the equals button */
+  --equals-button-color: #3b82f6;
+  --equals-text-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 3rem;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.875rem, 0.6193rem + 1.1364vw, 1.5rem);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 1.1477rem + 0.4545vw, 1.5rem);
+  padding: clamp(1.25rem, 1.1477rem + 0.4545vw, 1.5rem);
+  width: 100%;
+  max-width: 21.875rem;
+  background-color: var(--calc-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.screen-container {
+  min-height: 8.75rem;
+  color: var(--text-color);
+  background-color: var(--screen-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  gap: 0.125rem;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  text-align: right;
+}
+
+.screen-top-row {
+  height: auto;
+  min-height: 1.5rem;
+  font-size: clamp(1.25rem, 1.1989rem + 0.2273vw, 1.375rem);
+  font-weight: 500;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.screen-bottom-row {
+  height: auto;
+  min-height: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.5rem, 0.4489rem + 0.2273vw, 0.625rem);
+  width: 100%;
+}
+
+.button {
+  height: clamp(3.125rem, 2.9205rem + 0.9091vw, 3.625rem);
+  width: 100%;
+  font-family: inherit;
+  font-size: clamp(1.25rem, 1.1989rem + 0.2273vw, 1.375rem);
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--digit-button-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.97);
+  background-color: #f1f5f9;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.button[data-type="operator"],
+.button[data-type="command"] {
+  font-weight: 700;
+}
+
+.button[data-type="operator"] {
+  background-color: var(--operator-button-color);
+}
+
+.button[data-action="equals"] {
+  background-color: var(--equals-button-color);
+  color: var(--equals-text-color);
+  border-color: #2563eb;
+}
+
+.button[data-action="equals"]:hover {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+}
+
+.backspace-icon {
+  pointer-events: none;
+  width: clamp(1.625rem, 1.5227rem + 0.4545vw, 1.875rem);
+  height: auto;
+  fill: currentColor;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.5rem, 0.4489rem + 0.2273vw, 0.625rem);
+  font-weight: 500;
+}
+
+.github-logo {
+  width: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.github-logo:hover {
+  transform: scale(1.4);
+}
